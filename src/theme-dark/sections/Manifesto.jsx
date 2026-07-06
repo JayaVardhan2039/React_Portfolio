@@ -26,8 +26,8 @@ export default function Manifesto() {
   return (
     <section id="manifesto" style={{
     backgroundImage: `url(${Picture})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundSize: "100% 55%",
+    backgroundPosition: "20% 39%",
     backgroundRepeat: "no-repeat",
   }}>
       <DnaPolkaWave />
