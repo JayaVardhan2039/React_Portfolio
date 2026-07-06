@@ -1,0 +1,135 @@
+/* =====================================================================
+   LIGHT THEME — CONTENT
+   Everything the "Light Craft" sections render lives here — one place
+   to edit copy without touching the component/markup code. Text that
+   is shared between both themes (name, roles, email, etc.) still comes
+   from SITE_CONTENT in src/App.jsx and is passed down as the `site` prop.
+   ===================================================================== */
+
+export const DIAL_SECTIONS = [
+  { id: 'hero', label: 'Home' },
+  { id: 'manifesto', label: 'Intro' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'work-intro', label: 'Projects' },
+  { id: 'achieve-cert', label: 'Achievements' },
+  { id: 'edu-skills', label: 'Education' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
+];
+
+export const MANIFESTO = {
+  lead: "I              ",
+  beleive:"believe",
+  lead2:"           every challenge        is an opportunity to",
+  right:"learn,     grow,          and        create a",
+  highlight: 'story',
+  tail: ' worth telling',
+  meta: [
+    { label: 'focus', value: 'Design + Code' },
+    { label: 'based in', value: 'India' },
+    { label: 'available', value: 'For work' },
+  ],
+};
+
+export const EXPERIENCE_ITEMS = [
+  {
+    when: '2025 — Now',
+    title: 'Senior Product Designer / Dev',
+    company: 'Nightshade Studio · Remote',
+    desc: 'Leading design + frontend for client products end to end — from the first wireframe to the shipped, animated interface.',
+    alt: false,
+  },
+  {
+    when: '2023 — 2025',
+    title: 'Frontend Engineer',
+    company: 'Aurora Labs · Bengaluru',
+    desc: 'Built and maintained the core design system used across four production apps, cutting new-feature build time by a third.',
+    alt: true,
+  },
+  {
+    when: '2021 — 2023',
+    title: 'UI/UX Designer',
+    company: 'Freelance',
+    desc: 'Designed brand identities and product interfaces for early-stage startups, several of which went on to raise seed funding.',
+    alt: false,
+  },
+];
+
+export const PROJECTS = [
+  {
+    num: '01',
+    visualClass: 'pv-1',
+    tag: 'Product design',
+    title: 'Aurora — Finance App Redesign',
+    desc: 'A ground-up redesign of a personal finance app, turning a spreadsheet-grade tool into something people actually want to open every morning.',
+    stack: ['Figma', 'Framer', 'Design Systems'],
+  },
+  {
+    num: '02',
+    visualClass: 'pv-2',
+    tag: 'Web development',
+    title: 'Pulse — Realtime Dashboard',
+    desc: 'A WebSocket-driven analytics dashboard built for speed under pressure — sub-100ms updates across thousands of concurrent data points.',
+    stack: ['React', 'Node.js', 'WebSockets'],
+  },
+  {
+    num: '03',
+    visualClass: 'pv-3',
+    tag: 'Branding',
+    title: 'Nocturne — Identity System',
+    desc: 'A full visual identity for a late-night audio brand — wordmark, motion logo, and a generative pattern system built to never repeat twice.',
+    stack: ['Illustration', 'Motion', 'Brand Strategy'],
+  },
+  {
+    num: '04',
+    visualClass: 'pv-4',
+    tag: 'Creative coding',
+    title: 'Drift — Generative Art Engine',
+    desc: 'A browser-based generative art tool letting users sculpt particle fields in real time, exported as shareable looping animations.',
+    stack: ['Three.js', 'GLSL', 'Canvas API'],
+  },
+];
+
+export const RIBBON_WORDS = ['UI/UX DESIGN', 'FRONTEND DEV', 'BRANDING', 'MOTION'];
+
+export const ACHIEVEMENTS = [
+  { title: 'Awwwards — Site of the Day', subtitle: 'Aurora finance app redesign, 2025' },
+  { title: 'Top 10 Finalist', subtitle: 'Generative Art Hackathon, 2024' },
+  { title: 'Featured Creator', subtitle: 'CSS Design Awards showcase, 2023' },
+];
+
+export const CERTIFICATIONS = [
+  { title: 'Advanced React & Frontend Architecture', subtitle: 'Frontend Masters, 2024' },
+  { title: 'Google UX Design Certificate', subtitle: 'Coursera, 2022' },
+  { title: 'Motion Design for the Web', subtitle: 'School of Motion, 2023' },
+];
+
+export const EDUCATION = {
+  years: '2018 — 2022',
+  degree: 'B.Tech, Computer Science',
+  school: 'Andhra Pradesh, India',
+};
+
+export const SKILLS = [
+  'Figma', 'Framer', 'React', 'JavaScript', 'GSAP', 'Three.js',
+  'Node.js', 'WebGL / GLSL', 'Design Systems', 'Motion Design',
+  'Brand Identity', 'Illustration',
+];
+
+export const ABOUT_PARAGRAPHS = [
+  "I work at the intersection of design and code — close enough to the pixels to obsess over a 2px shadow, and close enough to the engine to know what it costs to render it.",
+  'My process starts with a feeling, not a feature list. Every project here began as a single image in my head before it became a file.',
+];
+
+export const ABOUT_STATS = [
+  { value: '20+', label: 'Projects shipped' },
+  { value: '4+', label: 'Years building' },
+  { value: '∞', label: 'Cups of coffee' },
+];
+
+export const SOCIALS = [
+  { label: 'Instagram', href: '#' },
+  { label: 'LinkedIn', href: '#' },
+  { label: 'GitHub', href: '#' },
+  { label: 'Twitter', href: '#' },
+];
