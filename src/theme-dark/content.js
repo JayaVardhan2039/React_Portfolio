@@ -25,9 +25,9 @@ export const MANIFESTO = {
   highlight: 'story',
   tail: ' worth telling',
   meta: [
-    { label: 'focus', value: 'Design + Code' },
-    { label: 'based in', value: 'India' },
-    { label: 'available', value: 'For work' },
+    { label: 'My focus', value: 'Design + Code' },
+    { label: 'based in', value: 'Vizag' },
+    { label: 'Open', value: 'To work' },
   ],
 };
 
@@ -135,5 +135,4 @@ export const SOCIALS = [
   { label: 'Instagram', href: '#' },
   { label: 'LinkedIn', href: '#' },
   { label: 'GitHub', href: '#' },
-  { label: 'Twitter', href: '#' },
 ];

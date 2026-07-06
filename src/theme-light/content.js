@@ -131,5 +131,4 @@ export const SOCIALS = [
   { label: 'Instagram', href: '#' },
   { label: 'LinkedIn', href: '#' },
   { label: 'GitHub', href: '#' },
-  { label: 'Twitter', href: '#' },
 ];

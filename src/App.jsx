@@ -15,8 +15,8 @@ const SITE_CONTENT = {
   subCrafting: 'crafting',         // hero subline cursive word
   subCoding: 'coding',             // hero subline typewriter word
   aboutName: 'Jaya Vardhan',       // name in the About section
-  email: 'hello@jayavardhan.dev',  // contact email (also used as link)
-  footerName: '© 2026 Jaya Vardhan', // footer line
+  email: 'gjvardhan992003@gmail.com',  // contact email (also used as link)
+  footerName: 'Made with JV', // footer line
 };
 
 const HINT_DARK_MODE = '☀️ Let there be light';

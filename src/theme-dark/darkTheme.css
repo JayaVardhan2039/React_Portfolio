@@ -339,7 +339,8 @@
   pointer-events: none;
   user-select: none;
 
-  filter: grayscale(100%) contrast(1.2) brightness(0.95);
+  filter: contrast(1.06) saturate(1.04);
+
 
 
 }
@@ -348,7 +349,6 @@
   z-index: 1;
   width: 65%;
   max-width: 1500px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -424,8 +424,6 @@
   z-index:0;
   pointer-events:none;
   user-select:none;
-  opacity:.6;
-  mix-blend-mode:soft-light;
 }
 @media(max-width:720px){
   .theme-dark-root #manifesto .manifesto-dna-wave{ opacity:.45; }

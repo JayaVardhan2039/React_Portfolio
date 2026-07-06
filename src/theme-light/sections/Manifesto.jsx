@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { MANIFESTO } from '../content.js';
-import manifestoPhoto from '../../assets/photo.png';
+import manifestoPhoto from '../../assets/photo1.png';
 
 export default function Manifesto() {
   const metaRef = useRef(null);
