@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { MANIFESTO } from '../content.js';
 import manifestoPhoto from '../../assets/photo.png';
 import DnaPolkaWave from './DnaPolkaWave.jsx';
+import Picture from './picture.jpg' 
 
 export default function Manifesto() {
   const metaRef = useRef(null);
@@ -23,7 +24,12 @@ export default function Manifesto() {
   }, []);
 
   return (
-    <section id="manifesto">
+    <section id="manifesto" style={{
+    backgroundImage: `url(${Picture})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}>
       <DnaPolkaWave />
       <img src={manifestoPhoto} alt="" className="manifesto-photo" />
 

@@ -321,8 +321,8 @@
 /* ================= INTRO / MANIFESTO ================= */
   .theme-dark-root #manifesto{
     position:relative;
-    min-height:90vh;
-    padding:16vh 8vw 14vh;
+    min-height:60vh;
+    padding:8vh 8vw 8vh;
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
   }
@@ -331,7 +331,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 90%;
+  height: 100%;
   width: auto;
   max-width: 96%;
   object-fit: contain;
