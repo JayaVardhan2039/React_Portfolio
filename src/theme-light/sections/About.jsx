@@ -6,7 +6,7 @@ export default function About({ site }) {
     <section id="about">
       <div className="col-l reveal">
         <span className="eyebrow">About</span>
-        <h3 id="about-name">{site.aboutName}</h3>
+        <h3 id="about-name">jaya vardhan govvada</h3>
       </div>
       <div className="col-r reveal">
         {ABOUT_PARAGRAPHS.map((p, i) => <p key={i}>{p}</p>)}

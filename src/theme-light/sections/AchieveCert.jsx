@@ -8,14 +8,6 @@ export default function AchieveCert() {
       <h2 className="exp-head reveal">Achievements <em>&amp;</em> Certifications</h2>
 
       <div className="ac-wrap">
-        <div className="ac-col ac-col-l reveal">
-          <h4 className="ac-heading">Achievements</h4>
-          <ul className="ac-list">
-            {ACHIEVEMENTS.map((a) => (
-              <li key={a.title}><b>{a.title}</b><span>{a.subtitle}</span></li>
-            ))}
-          </ul>
-        </div>
         <div className="ac-col ac-col-r reveal">
           <h4 className="ac-heading">Certifications</h4>
           <ul className="ac-list">
@@ -24,6 +16,15 @@ export default function AchieveCert() {
             ))}
           </ul>
         </div>
+        <div className="ac-col ac-col-l reveal">
+          <h4 className="ac-heading">Achievements</h4>
+          <ul className="ac-list">
+            {ACHIEVEMENTS.map((a) => (
+              <li key={a.title}><b>{a.title}</b><span>{a.subtitle}</span></li>
+            ))}
+          </ul>
+        </div>
+        
       </div>
     </section>
   );

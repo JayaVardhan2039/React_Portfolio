@@ -10,7 +10,8 @@ import React from 'react';
 export default function Hero() {
   return (
     <section id="hero">
-      <div className="orb" id="orb1" style={{ width: '480px', height: '480px', background: 'var(--violet)', top: '10%', left: '8%' }}></div>
+      <div className="orb" id="orb1" style={{ width: '480px', height: '480px', background: 'var(--blue)', top: '10%', left: '8%' }}></div>
+      <div className="orb" id="orb4" style={{ width: '380px', height: '380px', background: 'var(--violet)', top: '10%', left: '8%' }}></div>
       <div className="orb" id="orb2" style={{ width: '380px', height: '380px', background: 'var(--cyan)', bottom: '6%', right: '10%' }}></div>
       <div className="orb" id="orb3" style={{ width: '300px', height: '300px', background: 'var(--magenta)', top: '50%', left: '60%' }}></div>
 
