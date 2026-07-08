@@ -212,17 +212,14 @@ function initAll(root, gsap, ScrollTrigger, { site, onHeroReady, onSectionChange
   }
   function onHeroMouseLeave() {
     cbMouseInHero = false;
-    hideCursorBox();
     pauseCursorFollow();
   }
   function onDocMouseLeave() {
     cbMouseInHero = false;
-    hideCursorBox();
     pauseCursorFollow();
   }
   function onWindowBlur() {
     cbMouseInHero = false;
-    hideCursorBox();
     pauseCursorFollow();
   }
 
@@ -265,22 +262,37 @@ function initAll(root, gsap, ScrollTrigger, { site, onHeroReady, onSectionChange
     })();
   }
 
-  function initCursorBox() {
-    cbSequenceStarted = true;
-    setTimeout(() => {
-      cursorBox.classList.add('as-box');
-      const msg1 = 'Hi! its good to see you';
-      const msg2 = 'Curious?! lets explore';
-      typeMsg(msg1, () => {
-        setTimeout(() => {
-          eraseMsg(msg1, () => {
-            setTimeout(() => { typeMsg(msg2); }, 180);
-          });
-        }, 1500);
-      });
-    }, 400);
-    if (cbMouseInHero) showCursorBox();
-  }
+function initCursorBox() {
+  cbSequenceStarted = true;
+
+  // Start the box positioned under the hero name instead of waiting
+  // for a real mouse event inside #hero. Once the mouse does move,
+  // onHeroMouseMove keeps updating cbTX/cbTY as usual, and since the
+  // follow-loop is already running, it just eases smoothly from the
+  // name position over to the live cursor position.
+  const heroRect = heroEl.getBoundingClientRect();
+  const nameRect = nameEl.getBoundingClientRect();
+  cbTX = nameRect.left - heroRect.left + nameRect.width / 2;
+  cbTY = nameRect.bottom - heroRect.top + 75; // a bit below the name
+  cbX = cbTX;
+  cbY = cbTY;
+
+  showCursorBox();
+  resumeCursorFollow();
+
+  setTimeout(() => {
+    cursorBox.classList.add('as-box');
+    const msg1 = 'Hi,good to see you!';
+    const msg2 = 'Curious?! lets explore..';
+    typeMsg(msg1, () => {
+      setTimeout(() => {
+        eraseMsg(msg1, () => {
+          setTimeout(() => { typeMsg(msg2); }, 180);
+        });
+      }, 1500);
+    });
+  }, 400);
+}
 
   /* ====================================================
      2-D SLOT-WHEEL — section indicator
@@ -368,7 +380,16 @@ function initAll(root, gsap, ScrollTrigger, { site, onHeroReady, onSectionChange
       onEnterBack: () => dialGoTo(idx),
     });
   });
-
+const ribbonEl = q('#ribbon-wrap');
+const projectsIdx = DIAL_SECTIONS.findIndex((s) => s.id === 'work-intro');
+const achieveIdx = DIAL_SECTIONS.findIndex((s) => s.id === 'achieve-cert');
+if (ribbonEl && projectsIdx !== -1 && achieveIdx !== -1) {
+  ScrollTrigger.create({
+    trigger: ribbonEl, scroller: root, start: 'center center',
+    onEnter: () => dialGoTo(achieveIdx),
+    onLeaveBack: () => dialGoTo(projectsIdx),
+  });
+}
   /* ====================================================
      SCROLL REVEALS
      ==================================================== */

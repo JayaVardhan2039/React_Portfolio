@@ -33,14 +33,14 @@ export const MANIFESTO = {
 
 export const EXPERIENCE_ITEMS = [
   {
-    when: 'June 2024 — June 2025',
+    when: 'September  2025 — June 2026',
     title: 'Associate Software Engineer',
     company: 'Infinite Computer Solutions · Visakhapatnam, India',
     desc: 'Worked in the healthcare domain supporting modules for identity and access operations, handling access provisioning through SailPoint for user onboarding, updates, and compliance, and coordinating with cross-functional teams to resolve issues and keep system performance consistent.',
     alt: false,
   },
   {
-    when: 'June 2024 — August 2024',
+    when: 'June 2025 — August 2025',
     title: 'Developer Trainee',
     company: 'Infinite Computer Solutions · Visakhapatnam, India',
     desc: 'Completed structured training in C#, MySQL, and the .NET framework, building a solid foundation in backend development and database-driven systems.',
@@ -70,19 +70,21 @@ export const PROJECTS = [
     num: '01',
     visualStyle: 'radial-gradient(circle at 30% 30%, var(--violet), transparent 70%), conic-gradient(from 90deg, var(--cyan), var(--violet), var(--magenta), var(--cyan))',
     tag: 'Web development',
-    title: 'Mr. Parker — Vehicle Parking Management System',
+    title: 'Mr.Parker-SaaS Vehicle Parking Management System',
     desc: 'A vehicle parking management system enabling remote reservations and returns with live geolocation tracking (2km accuracy) via the Google Maps API and GeoJSON data structures, with secure session handling through JWT token blacklisting that cut unauthorized access by 95% compared to localStorage approaches. Integrated real-time vehicle tracking with existing fleet management software, reducing manual data entry by 40 hours a month.',
     stack: ['MERN Stack', 'Geolocation API', 'JWT', 'WebSockets'],
     images: ['mrparker1', 'mrparker2', 'mrparker3', 'mrparker4', 'mrparker5', 'mrparker6'],
+    href: 'https://github.com/JayaVardhan2039/Mr.Parker',
   },
   {
     num: '02',
     visualStyle: 'radial-gradient(circle at 60% 40%, var(--cyan), transparent 70%), conic-gradient(from 200deg, var(--lime), var(--cyan), var(--violet))',
     tag: 'Machine learning',
-    title: 'Intrusion Detection System',
+    title: 'XAI Intrusion Detection System',
     desc: 'An ML-based security system detecting 23 network attack types — including DDoS, port scanning, and SQL injection — using a PCA-optimized Random Forest classifier achieving 99.47% accuracy, which won a hackathon. Integrated XAI techniques (LIME/SHAP) for attack pattern visualization, improving model interpretability by 40% through feature importance analysis, and deployed a local Ollama-powered chatbot for natural language threat queries with automated attack pattern explanations.',
     stack: ['Python', 'Scikit-learn', 'Flask', 'SHAP / LIME'],
     images: ['intrusion1', 'intrusion2', 'intrusion3', 'intrusion4'],
+    href: 'https://github.com/JayaVardhan2039/Intrusion-Detection-System',
   },
   {
     num: '03',
@@ -92,6 +94,7 @@ export const PROJECTS = [
     desc: 'A full-stack platform for programming students to share multimedia work experiences, boosting engagement by 70% through real-time interactions — likes, comments, chat — using Socket.io, with JWT and Google OAuth authentication and session management via cookies and local storage.',
     stack: ['React', 'Node.js', 'Express.js', 'Socket.io'],
     images: ['devfinds'],
+    href: 'https://github.com/JayaVardhan2039/DevFinds',
   },
 ];
 

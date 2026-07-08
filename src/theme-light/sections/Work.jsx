@@ -97,7 +97,9 @@ export default function Work() {
               <div className="project-stack">
                 {p.stack.map((s) => <span key={s}>{s}</span>)}
               </div>
-              <a href="https://github.com/JayaVardhan2039" className="project-link">View case study <span className="arrow">→</span></a>
+              <a href={p.href} className="project-link" target="_blank" rel="noopener noreferrer">
+                View case study <span className="arrow">→</span>
+              </a>
             </div>
           </div>
         ))}
