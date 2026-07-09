@@ -445,11 +445,22 @@
   position:relative;
   min-height:92vh;
   display:flex; align-items:center;
+  flex-wrap:wrap;
+  row-gap:5vh; column-gap:0vw;
   padding:6vh 6vw;
   overflow:hidden;
 }
 .theme-dark-root .project:nth-child(even){ justify-content:flex-end; }
 .theme-dark-root .project:nth-child(odd){ justify-content:flex-start; }
+
+/* gallery + content are real flex siblings now (not absolutely
+   positioned), so the browser shrinks/wraps them together and they
+   can never overlap. `order` keeps the same visual grouping the
+   old absolute-positioning hack was going for. */
+.theme-dark-root .project:nth-child(odd) .project-content{ order:1; }
+.theme-dark-root .project:nth-child(odd) .project-gallery{ order:2; }
+.theme-dark-root .project:nth-child(even) .project-gallery{ order:1; }
+.theme-dark-root .project:nth-child(even) .project-content{ order:2; }
 
 .theme-dark-root .project-num{
   position:absolute; top:6%;
@@ -473,18 +484,19 @@
 
 /* ---------------- project screenshot gallery ---------------- */
 .theme-dark-root .project-gallery{
-  position:absolute; top:50%; left:50%;
-   max-width: min(64vw, 760px);
-  max-height: 80vh;
-  transform:translate(-50%,-50%);
-  z-index:2;
+  position:relative;
+  z-index:3;
+  /* flex-grow/shrink so it scales down smoothly with the viewport,
+     but never below min-width, and never past its sibling's edge */
+  flex:1 1 min(64vw,760px);
+  max-width:min(64vw,760px);
+  min-width:0;
 }
-.theme-dark-root .project:nth-child(odd) .project-gallery{ left:63%; }
-.theme-dark-root .project:nth-child(even) .project-gallery{ left:33%; }
 
 .theme-dark-root .project-gallery-frame{
   position:relative;
   display:inline-block;
+  max-width:100%;
   line-height:0;
   border-radius:18px;
   overflow:hidden;
@@ -494,8 +506,8 @@
 }
 .theme-dark-root .project-gallery-img{
   display:block;
-  max-width: min(64vw, 760px);
-  max-height: 80vh;
+  max-width:100%;
+  max-height:80vh;
   width:auto; height:auto;
   object-fit:contain;
   animation:galleryFade .35s ease;
@@ -537,18 +549,45 @@
   transform:scale(1.25);
 }
 
-@media (max-width:860px){
-  .theme-dark-root .project-gallery{
-    position:relative; top:auto; left:auto !important; transform:none;
-    width:100%; max-width:460px; margin:0 auto 32px;
-  }
-}
-
 .theme-dark-root .project-content{
   position:relative; z-index:2;
+  flex:1 1 480px;
   max-width:560px;
+  min-width:0;
 }
-.theme-dark-root .project:nth-child(even) .project-content{ text-align:right; margin-left:auto; }
+.theme-dark-root .project:nth-child(even) .project-content{ text-align:right; }
+
+@media (max-width:860px){
+  .theme-dark-root .project{
+    flex-direction:column;
+    justify-content:center;
+  }
+  .theme-dark-root .project-gallery,
+  .theme-dark-root .project-content{
+    order:initial;
+    flex-basis:auto;
+    max-width:100%;
+    width:100%;
+  }
+  .theme-dark-root .project-gallery{
+    max-width:460px;
+    margin:0 auto;
+  }
+  .theme-dark-root .project:nth-child(even) .project-content{
+    text-align:center;
+  }
+  .theme-dark-root .project:nth-child(odd) .project-content{
+    text-align:center;
+  }
+  .theme-dark-root .project-desc,
+  .theme-dark-root .project:nth-child(even) .project-desc{
+    margin-left:auto; margin-right:auto;
+  }
+  .theme-dark-root .project-stack,
+  .theme-dark-root .project:nth-child(even) .project-stack{
+    justify-content:center;
+  }
+}
 
 .theme-dark-root .project-tag{
   font-family:'JetBrains Mono',monospace; font-size:11px;
